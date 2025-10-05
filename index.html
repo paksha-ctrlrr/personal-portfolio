@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakshal - developer profile</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Monda&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+ 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: rgb(207, 201, 136);
+      color: black;
+      font-family: "Monda", sans-serif;
+      animation: fadeIn 1s ease-in;
+      position: relative;
+      padding: 20px;
+    }
+
+    body::before {
+      content: "";
+      pointer-events: none;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      border: 5px solid;
+      border-image-slice: 1;
+      border-width: 5px;
+      border-image-source: linear-gradient(270deg, #9a3ce4, #4c16a2, #9a3ce4);
+      animation: borderAnimation 6s linear infinite;
+      border-radius: 12px;
+      z-index: 9999;
+    }
+
+    @keyframes borderAnimation {
+      0% {
+        border-image-source: linear-gradient(270deg, #9a3ce4, #4c16a2, #9a3ce4);
+      }
+
+      50% {
+        border-image-source: linear-gradient(90deg, #4c16a2, #9a3ce4, #4c16a2);
+      }
+
+      100% {
+        border-image-source: linear-gradient(270deg, #9a3ce4, #4c16a2, #9a3ce4);
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 80px;
+      background-color: black;
+      color: white;
+      border-radius: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      color: white;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      position: relative;
+      transition: color 0.3s ease;
+      font-weight: 600;
+    }
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: yellow;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    nav ul li a:hover {
+      color: yellow;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    .left {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .FirstSection {
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .leftsection {
+      margin-left: 100px;
+      font-size: 48px;
+      text-align: center;
+      animation: fadeUp 1s ease-out;
+      line-height: 1.3;
+      max-width: 500px;
+    }
+
+    .leftsection div {
+      margin-top: 15px;
+      font-size: 22px;
+      font-weight: 500;
+      color: #222;
+    }
+
+    .leftsection .extra-text {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 400;
+      color: #444;
+      line-height: 1.4;
+    }
+
+    .rightsection img {
+      width: 70%;
+      max-width: 450px;
+      margin: 50px 0;
+      margin-left: 90px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(76, 22, 162, 0.25);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .rightsection img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 40px rgba(76, 22, 162, 0.5);
+    }
+
+    .pakshal {
+      background-color: linear-gradient(to right, #4c16a2, #9a3ce4);
+      font-weight: 900;
+      color: #4c16a2;
+
+    }
+
+    footer {
+      margin-top: 40px;
+      background-color: #333;
+      color: white;
+      padding: 30px 0 20px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer-icons {
+      margin-bottom: 12px;
+      margin-top: -20px;
+    }
+
+    .footer-icons a {
+      text-decoration: none;
+      font-size: 28px;
+      margin: 0 25px;
+      transition: transform 0.3s ease, color 0.3s ease;
+      display: inline-block;
+    }
+
+    .footer-icons a.github {
+      color: #171515;
+    }
+
+    .footer-icons a.linkedin {
+      color: #0077b5;
+    }
+
+    .footer-icons a.twitter {
+      color: #1da1f2;
+    }
+
+    .footer-icons a.facebook {
+      color: #1877f2;
+    }
+
+    .footer-icons a.instagram {
+      color: #e1306c;
+    }
+
+    .footer-icons a:hover {
+      transform: scale(1.3);
+      filter: drop-shadow(0 0 5px currentColor);
+    }
+
+    .footer-text {
+      font-size: 14px;
+      color: #bbb;
+      margin-top: 10px;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      .leftsection {
+        font-size: 40px;
+        margin-left: 50px;
+        margin-top: 30px;
+        max-width: 400px;
+      }
+
+      .rightsection img {
+        width: 65%;
+        max-width: 380px;
+        margin-left: 50px;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      .left {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0;
+      }
+
+      nav ul li {
+        margin: 5px 0;
+      }
+
+      .FirstSection {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .leftsection {
+        margin: 30px 0;
+        font-size: 36px;
+        margin-left: 0;
+        max-width: 90%;
+      }
+
+      .rightsection img {
+        width: 80%;
+        max-width: none;
+        margin: 20px 0;
+        margin-left: 0;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .leftsection {
+        font-size: 28px;
+        margin: 20px 10px;
+      }
+
+      .rightsection img {
+        width: 90%;
+        margin: 20px 0;
+      }
+
+      .left {
+        font-size: 1.1rem;
+      }
+
+      nav ul li a {
+        font-size: 14px;
+      }
+
+      .footer-icons a {
+        font-size: 22px;
+        margin: 0 12px;
+      }
+
+      .footer-text {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">Pakshal's Portfolio</div>
+      <div class="right">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Services</a></li>
+          <li><a href="/">Projects</a></li>
+          <li><a href="/">Contact Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="FirstSection">
+      <div class="leftsection">
+        My Name Is <span class="pakshal"><b>Pakshal.</b></span><br />
+        <div>I am an aspiring entrepreneur.</div>
+        <div class="extra-text">
+          Passionate about creating innovative solutions,<br />
+          committed to learning and growth every day.<br />
+          Driven by curiosity and a strong desire to make a difference.<br />
+          Focused on building meaningful connections and impactful projects.<br />
+          Always eager to embrace challenges and turn ideas into reality.
+        </div>
+      </div>
+      <div class="rightsection">
+        <img src="pakshal.jpeg" alt="Pakshal" />
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-icons">
+      <a href="https://github.com/" target="_blank" class="github" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/" target="_blank" class="linkedin" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com/" target="_blank" class="twitter" aria-label="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://facebook.com/" target="_blank" class="facebook" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://instagram.com/" target="_blank" class="instagram" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <div class="footer-text">
+      &copy; 2025 Pakshal. All rights reserved.
+    </div>
+  </footer>
+</body>
+
+</html>
